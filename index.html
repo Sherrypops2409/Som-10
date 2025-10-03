@@ -28,17 +28,19 @@
       color: #e75480; 
     }
     a { color: #e75480; text-decoration: none; font-weight: bold; }
-    .memory { 
-      margin: 20px auto; 
-      padding: 10px; 
-      background: white; 
-      border-radius: 15px; 
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1); 
-      max-width: 400px;
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
     }
-    .memory img {
-      width: 100%;
-      border-radius: 10px;
+    .photos img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -53,21 +55,11 @@
   <button onclick="showMessage()">Show Me a Love Note ❤️</button>
   <p id="message"></p>
   
-  <h2>📸 Our Memories 📸</h2>
-  
-  <div class="memory">
-    <h3>You and me we belong together🌸</h3>
-    <img src="image3.jpg">
-  </div>
-  
-  <div class="memory">
-    <h3>I love the way you look at me❤️</h3>
-    <img src="Image2.jpg">
-  </div>
-  
-  <div class="memory">
-    <h3>I'll web you to me🕸️</h3>
-    <img src="image4.jpg">
+  <!-- Space for 3 pictures -->
+  <div class="photos">
+    <img src="image3.jpg" alt="Me and you we belong together🌸">
+    <img src="Image2.jpg" alt="i love the way you look at me🥺">
+    <img src="image4.jpg" alt="I'll web you up with me🕸️">
   </div>
 
   <script>
