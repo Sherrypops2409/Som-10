@@ -2,49 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy 10th Month Anniversary 💖</title>
+  <title>💖 Sorry & Happy 10th Month Anniversary 💖</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #fff0f5; }
+    body { 
+      font-family: 'Arial', sans-serif; 
+      text-align: center; 
+      background: #fff0f5; 
+      padding: 50px; 
+    }
     h1 { color: #e75480; }
-    .memory { margin: 20px; padding: 20px; background: white; border-radius: 15px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
-    button { background: #e75480; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+    p { font-size: 1.2em; color: #555; }
+    button { 
+      background: #e75480; 
+      color: white; 
+      border: none; 
+      padding: 12px 25px; 
+      border-radius: 10px; 
+      cursor: pointer; 
+      font-size: 1em;
+      margin-top: 20px;
+    }
+    #message { 
+      margin-top: 20px; 
+      font-size: 1.2em; 
+      color: #e75480; 
+    }
+    a { color: #e75480; text-decoration: none; font-weight: bold; }
+    .memory { 
+      margin: 20px auto; 
+      padding: 10px; 
+      background: white; 
+      border-radius: 15px; 
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1); 
+      max-width: 400px;
+    }
+    .memory img {
+      width: 100%;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>💝 Happy 10th Month Anniversary, Somdatta 💝</h1>
-  <p>Here’s a small digital scrapbook with love and memories 💕</p>
+  <h1>💖 Sorry for the past few days 💖</h1>
+  <p>I know things weren’t perfect, but I hope this little surprise makes you smile 😊</p>
+  
+  <a href="#" onclick="showAnniversary(); return false;">Click here for a special message 💌</a>
+  <p id="happyAnniversary" style="font-size:1.5em; color:#e75480; margin-top:20px;"></p>
+  
+  <h2>💌 Little Love Messages 💌</h2>
+  <button onclick="showMessage()">Show Me a Love Note ❤️</button>
+  <p id="message"></p>
+  
+  <h2>📸 Our Memories 📸</h2>
   
   <div class="memory">
-    <h2>Our First Outing 🌸</h2>
-    <img src="https://via.placeholder.com/300x200" alt="Outing">
+    <h3>Our First Outing 🌸</h3>
+    <img src="https://via.placeholder.com/400x250?text=First+Outing" alt="First Outing">
   </div>
-
+  
   <div class="memory">
-    <h2>Birthday Surprise 🎂</h2>
-    <img src="https://via.placeholder.com/300x200" alt="Birthday">
+    <h3>Birthday Surprise 🎂</h3>
+    <img src="https://via.placeholder.com/400x250?text=Birthday+Surprise" alt="Birthday Surprise">
   </div>
-
+  
   <div class="memory">
-    <h2>Study Date 📚</h2>
-    <img src="https://via.placeholder.com/300x200" alt="Study">
+    <h3>Study Date 📚</h3>
+    <img src="https://via.placeholder.com/400x250?text=Study+Date" alt="Study Date">
   </div>
-
-  <h2>🎮 Little Game</h2>
-  <p>Click the button for a love note 💖</p>
-  <button onclick="showMessage()">Click Me</button>
-  <p id="message"></p>
 
   <script>
-    const messages = [
+    const loveMessages = [
       "You make my world brighter 🌞",
       "I love you more every day 💕",
       "You're my safe place 🌸",
       "Life feels magical with you ✨",
-      "My forever & always 💌"
+      "My forever & always 💌",
+      "You’re the best part of my life ❤️",
+      "Your smile melts my heart 😍",
+      "Being with you is my favorite thing 💖",
+      "I can’t imagine life without you 🌹",
+      "Every moment with you is special 💫"
     ];
+
     function showMessage() {
-      const msg = messages[Math.floor(Math.random() * messages.length)];
+      const msg = loveMessages[Math.floor(Math.random() * loveMessages.length)];
       document.getElementById("message").innerText = msg;
+    }
+
+    function showAnniversary() {
+      document.getElementById("happyAnniversary").innerText = "🎉 Happy 10th Month Anniversary, Baby! 🎉";
     }
   </script>
 </body>
