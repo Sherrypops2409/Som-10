@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 10th Month Anniversary 💖</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #fff0f5; }
+    h1 { color: #e75480; }
+    .memory { margin: 20px; padding: 20px; background: white; border-radius: 15px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
+    button { background: #e75480; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>💝 Happy 10th Month Anniversary, Somdatta 💝</h1>
+  <p>Here’s a small digital scrapbook with love and memories 💕</p>
+  
+  <div class="memory">
+    <h2>Our First Outing 🌸</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Outing">
+  </div>
+
+  <div class="memory">
+    <h2>Birthday Surprise 🎂</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Birthday">
+  </div>
+
+  <div class="memory">
+    <h2>Study Date 📚</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Study">
+  </div>
+
+  <h2>🎮 Little Game</h2>
+  <p>Click the button for a love note 💖</p>
+  <button onclick="showMessage()">Click Me</button>
+  <p id="message"></p>
+
+  <script>
+    const messages = [
+      "You make my world brighter 🌞",
+      "I love you more every day 💕",
+      "You're my safe place 🌸",
+      "Life feels magical with you ✨",
+      "My forever & always 💌"
+    ];
+    function showMessage() {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("message").innerText = msg;
+    }
+  </script>
+</body>
+</html>
