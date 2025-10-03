@@ -9,6 +9,8 @@
       text-align: center; 
       background: #fff0f5; 
       padding: 50px; 
+      overflow-x: hidden; /* prevent horizontal scroll from hearts */
+      position: relative;
     }
     h1 { color: #e75480; }
     p { font-size: 1.2em; color: #555; }
@@ -42,6 +44,37 @@
       border-radius: 15px;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
     }
+    .photos h3 {
+      margin: 10px 0 0 0;
+      font-size: 1em;
+      color: #e75480;
+    }
+    .photo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Hearts animation */
+    .heart {
+      position: fixed;
+      color: #e75480;
+      font-size: 20px;
+      animation: fall linear infinite;
+      z-index: 9999;
+      user-select: none;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -55,14 +88,20 @@
   <button onclick="showMessage()">Show Me a Love Note ❤️</button>
   <p id="message"></p>
   
-  <!-- Space for 3 pictures -->
+  <!-- Photos side by side with captions below -->
   <div class="photos">
-    <h3>Me and you we belong together🌸</h3>
-    <img src="image3.jpg" alt="Me and you we belong together🌸">
-    <h3>i love the way you look at me🥺</h3>
-    <img src="Image2.jpg" alt="i love the way you look at me🥺">
-    <h3>I'll web you up with me🕸️</h3>
-    <img src="image 4.jpg" alt="I'll web you up with me🕸️">
+    <div class="photo-block">
+      <img src="image3.jpg" alt="Photo 1">
+      <h3>Me and you we belong together🌸</h3>
+    </div>
+    <div class="photo-block">
+      <img src="Image2.jpg" alt="Photo 2">
+      <h3>I love the way you look at me🥺</h3>
+    </div>
+    <div class="photo-block">
+      <img src="image4.jpg" alt="Photo 3">
+      <h3>I'll web you up with me🕸️</h3>
+    </div>
   </div>
 
   <script>
@@ -87,7 +126,22 @@
     function showAnniversary() {
       document.getElementById("happyAnniversary").innerText = "🎉 Happy 10th Month Anniversary, Baby! 🎉";
     }
+
+    // Hearts animation
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (10 + Math.random() * 20) + 'px';
+      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 6000); // remove heart after it falls
+    }
+
+    setInterval(createHeart, 300); // create hearts continuously
   </script>
 </body>
 </html>
-=======
